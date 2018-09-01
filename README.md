@@ -140,24 +140,6 @@ services:
       ELASTICSEARCH_URL: http://10.0.0.52:9200
 ```
 
-- logstash
-
-```
-sudo docker run --rm -it \
-	-v /home/projects/elk/logstash/pipeline/:/usr/share/logstash/pipeline \
-	docker.elastic.co/logstash/logstash:6.4.0
-
-
-sudo docker run --rm -it \
-	-v /home/projects/elk/logstash/config:/usr/share/logstash/config \
-	docker.elastic.co/logstash/logstash:6.4.0
-
-sudo docker run --rm -it \
-	-v /home/projects/elk/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml \ 
-	docker.elastic.co/logstash/logstash:6.4.0
-
-```
-
 ### logstash
 - 拉取镜像
 ```
@@ -170,6 +152,18 @@ sudo docker run --rm -it \
 	-v /home/projects/elk/logstash/pipeline/:/usr/share/logstash/pipeline/ \
 	docker.elastic.co/logstash/logstash:6.4.0 \
 	/bin/bash
+
+sudo docker run --rm -it \
+	-v /home/projects/elk/logstash/pipeline/:/usr/share/logstash/pipeline \
+	docker.elastic.co/logstash/logstash:6.4.0
+
+sudo docker run --rm -it \
+	-v /home/projects/elk/logstash/config:/usr/share/logstash/config \
+	docker.elastic.co/logstash/logstash:6.4.0
+
+sudo docker run --rm -it \
+	-v /home/projects/elk/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml \ 
+	docker.elastic.co/logstash/logstash:6.4.0
 ```
 
 - logstash.conf
@@ -198,7 +192,7 @@ http.host: "0.0.0.0"
 xpack.monitoring.elasticsearch.url: http://10.0.0.52:9200
 ```
 
-- 启动服务
+- 容器内部启动服务
 ```
 logstash -f /usr/share/logstash/config/logstash-sample.conf
 ```
