@@ -81,7 +81,7 @@ version: '2'
 services:
   elasticsearch-node1:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
-    container_name: elasticsearch
+    container_name: elasticsearch1
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
@@ -96,7 +96,7 @@ services:
       - 9200:9200
     networks:
       - esnet
-  elasticsearch-node1:
+  elasticsearch-node2:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     container_name: elasticsearch2
     environment:
