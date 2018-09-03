@@ -75,6 +75,11 @@ grep vm.max_map_count /etc/sysctl.conf
 sysctl -w vm.max_map_count=262144
 ```
 
+- config
+```
+https://www.elastic.co/guide/en/elasticsearch/reference/6.4/settings.html
+```
+
 - docker-compose.yml
 ```
 version: '2'
@@ -135,9 +140,15 @@ version: '2'
 services:
   kibana:
     image: docker.elastic.co/kibana/kibana:6.4.0
+    ports:
+      - 5601:5601
     environment:
       SERVER_NAME: kibana
       ELASTICSEARCH_URL: http://10.0.0.52:9200
+```
+- config
+```
+https://www.elastic.co/guide/en/kibana/6.4/settings.html
 ```
 
 ### logstash
