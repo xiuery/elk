@@ -234,7 +234,17 @@ logstash -f /usr/share/logstash/config/logstash-sample.conf
 
 ### filebeat
 
-- filebeat.yml说明
+- 基本使用
+```
+# 列出模块
+filebeat modules list
+# 使模块生效
+filebeat modules enable nginx
+# 启动filebeat
+filebeat setup
+```
+
+- filebeat.yml说明(完整配置看filebeat.reference.yml)
 ```
 # 默认值 log ，表示一个日志读取源：这个源是收集 Nginx 的访问日志
 type : log
