@@ -242,6 +242,8 @@ filebeat modules list
 filebeat modules enable nginx
 # 启动filebeat
 filebeat setup
+# 
+filebeat run
 ```
 
 - filebeat.yml说明(完整配置看filebeat.reference.yml)
